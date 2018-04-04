@@ -1,0 +1,1 @@
+//mongoose schema  notes associated with article 

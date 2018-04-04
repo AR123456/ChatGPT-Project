@@ -1,3 +1,4 @@
+//for node server and routes 
 //todo change to const when app working so const dosent break anything 
 var express = require("express");
 var bodyParser = require("body-parser");

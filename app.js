@@ -1,15 +1,11 @@
-//this went into the new server.js file 
-// const request = require('request');
-// const cheerio = require('cheerio');
-// const $ = require('cheerio');
-//this gets replaced by axios
+const request = require('request');
+const cheerio = require('cheerio');
+const $ = require('cheerio');
+
 request ("https://www.nytimes.com", function(error,response,html){
-//this gets replaced by (response.data)    
-// var $ = cheerio.load(html);
-// this gets replaced by var result ={}
-    // var results = [];
+    var $ = cheerio.load(html);
+    var results = [];
     $("h2.story-heading").each(function(i, element){
-        //this gets replaced my the new syntax 
         var title = $(element).text();
         var link = $(element).children().attr("href");
         results.push({
