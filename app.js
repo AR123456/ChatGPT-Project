@@ -1,7 +1,7 @@
 const request = require('request');
 const cheerio = require('cheerio');
 const $ = require('cheerio');
-
+//a working cheerio request string 
 request ("https://www.nytimes.com", function(error,response,html){
     var $ = cheerio.load(html);
     var results = [];

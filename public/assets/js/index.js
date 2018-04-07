@@ -1,1 +1,0 @@
-//this JS is for hte index page 
