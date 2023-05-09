@@ -14,6 +14,8 @@
 //     temperature: 0,
 //   }),
 // });
+// gonna need npm dotenv for this
+const API_KEY = process.env.API_KEY;
 
 async function fetchData() {
   const response = await fetch("https://api.openai.com/v1/completions", {
