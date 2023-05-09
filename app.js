@@ -31,4 +31,8 @@ async function fetchData() {
       temperature: 0,
     }),
   });
+  const data = await response.json();
+  console.log(data);
 }
+
+fetchData();
