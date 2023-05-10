@@ -9,10 +9,15 @@ async function fetchData() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "text-davinci-003",
-      prompt: "hello,how are you today",
-      max_tokens: 7,
-      temperature: 0,
+      // model: "gpt-4", // this did not work but the turbo did
+      model: "gpt-3.5-turbo",
+
+      messages: [
+        {
+          role: "user",
+          content: "Hello!",
+        },
+      ],
     }),
   });
   const data = await response.json();
