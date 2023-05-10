@@ -1,8 +1,8 @@
 // const API_KEY = process.env.API_KEY;
-const API_KEY = "s";
+const API_KEY = "";
 
 async function fetchData() {
-  const response = await fetch("https://api.openai.com/v1/completions", {
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${API_KEY}`,
