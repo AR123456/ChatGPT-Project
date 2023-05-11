@@ -1,6 +1,8 @@
 // const API_KEY = process.env.API_KEY;
 const API_KEY = "";
 
+const submitButton = document.getElementById("submit");
+
 async function getMessage() {
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -27,5 +29,6 @@ async function getMessage() {
     //
   }
 }
+
+submitButton.addEventListener("click", getMessage);
 // will be called when web page opened page and look at console in inspector tools
-getMessage();
