@@ -1,7 +1,8 @@
 // const API_KEY = process.env.API_KEY;
-const API_KEY = " ";
+const API_KEY = "";
 
 const submitButton = document.getElementById("submit");
+const outPutElement = document.getElementById("output");
 
 async function getMessage() {
   const options = {
@@ -30,7 +31,7 @@ async function getMessage() {
     );
     const data = await response.json();
     console.log(data);
-    console.log(data.choices[0].message.content);
+    outPutElement.textContent = data.choices[0].message.content;
   } catch (error) {
     console.log(error);
   }
