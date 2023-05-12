@@ -5,7 +5,7 @@ const submitButton = document.getElementById("submit");
 
 async function getMessage() {
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const options = {
       method: "POST",
       headers: {
         Authorization: `Bearer ${API_KEY}`,
@@ -22,7 +22,11 @@ async function getMessage() {
           },
         ],
       }),
-    });
+    };
+    const response = await fetch(
+      "https://api.openai.com/v1/chat/completions",
+      {}
+    );
     const data = await response.json();
     console.log(data);
   } catch (error) {
