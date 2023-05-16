@@ -5,6 +5,7 @@ const submitButton = document.getElementById("submit");
 const outputElement = document.getElementById("output");
 const inputElement = document.querySelector("input");
 const historyElement = document.querySelector(".history");
+const buttonElement = document.querySelector("button");
 async function getMessage() {
   const options = {
     method: "POST",
@@ -36,13 +37,16 @@ async function getMessage() {
       const pElement = document.createElement("p");
       pElement.textContent = inputElement.value;
       historyElement.append(pElement);
-      console.log(pElement.textContent);
     }
     // pass the entered question to history
   } catch (error) {
     console.log(error);
   }
 }
+clearInput = () => {
+  // replace what is in div with empty string
+  inputElement.value = "";
+};
 
 submitButton.addEventListener("click", getMessage);
-// will be called when web page opened page and look at console in inspector tools
+buttonElement.addEventListener("click", clearInput);
