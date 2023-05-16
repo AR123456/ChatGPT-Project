@@ -2,8 +2,9 @@
 const API_KEY = "";
 
 const submitButton = document.getElementById("submit");
-const outPutElement = document.getElementById("output");
-
+const outputElement = document.getElementById("output");
+const inputElement = document.querySelector("input");
+const historyElement = document.getElementsByClassName("history");
 async function getMessage() {
   const options = {
     method: "POST",
@@ -18,7 +19,8 @@ async function getMessage() {
       messages: [
         {
           role: "user",
-          content: "Hello!",
+          // content: "Hello!",
+          content: inputElement.value,
         },
       ],
       max_tokens: 100,
@@ -30,8 +32,14 @@ async function getMessage() {
       options
     );
     const data = await response.json();
-    console.log(data);
-    outPutElement.textContent = data.choices[0].message.content;
+    // console.log(data);
+    outputElement.textContent = data.choices[0].message.content;
+    if (data.choices[0].message.content) {
+      const pElement = document.createElement("p");
+      pElement.textContent = inputElement.value;
+      historyElement.append(pElement);
+    }
+    // pass the entered question to history
   } catch (error) {
     console.log(error);
   }
