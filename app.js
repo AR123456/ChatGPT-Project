@@ -4,7 +4,7 @@ const API_KEY = "";
 const submitButton = document.getElementById("submit");
 const outputElement = document.getElementById("output");
 const inputElement = document.querySelector("input");
-const historyElement = document.getElementsByClassName("history");
+const historyElement = document.querySelector(".history");
 async function getMessage() {
   const options = {
     method: "POST",
@@ -15,11 +15,9 @@ async function getMessage() {
     body: JSON.stringify({
       // model: "gpt-4", // this did not work but the turbo did
       model: "gpt-3.5-turbo",
-
       messages: [
         {
           role: "user",
-          // content: "Hello!",
           content: inputElement.value,
         },
       ],
@@ -38,6 +36,7 @@ async function getMessage() {
       const pElement = document.createElement("p");
       pElement.textContent = inputElement.value;
       historyElement.append(pElement);
+      console.log(pElement.textContent);
     }
     // pass the entered question to history
   } catch (error) {
