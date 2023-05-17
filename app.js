@@ -43,10 +43,6 @@ async function getMessage() {
     console.log(error);
   }
 }
-clearInput = () => {
-  // replace what is in div with empty string
-  inputElement.value = "";
-};
 
 submitButton.addEventListener("click", getMessage);
-buttonElement.addEventListener("click", clearInput);
+// will be called when web page opened page and look at console in inspector tools
