@@ -29,7 +29,7 @@ async function getMessage() {
         },
       ],
       // max number of words or characters that can be generated in response
-      max_tokens: 100,
+      max_tokens: 500,
     }),
   };
   try {
