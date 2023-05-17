@@ -6,6 +6,12 @@ const outputElement = document.getElementById("output");
 const inputElement = document.querySelector("input");
 const historyElement = document.querySelector(".history");
 const buttonElement = document.querySelector("button");
+
+function changeInput(value) {
+  const inputElement = document.querySelector("input");
+  inputElement.value = value;
+}
+
 async function getMessage() {
   const options = {
     method: "POST",
@@ -22,6 +28,7 @@ async function getMessage() {
           content: inputElement.value,
         },
       ],
+      // max number of words or characters that can be generated in response
       max_tokens: 100,
     }),
   };
@@ -36,6 +43,10 @@ async function getMessage() {
     if (data.choices[0].message.content) {
       const pElement = document.createElement("p");
       pElement.textContent = inputElement.value;
+      //if the click is outside the text box bring the cursor there
+      pElement.addEventListener("click", () =>
+        changeInput(pElement.textContent)
+      );
       historyElement.append(pElement);
     }
     // pass the entered question to history
@@ -43,6 +54,10 @@ async function getMessage() {
     console.log(error);
   }
 }
+clearInput = () => {
+  // replace what is in div with empty string
+  inputElement.value = "";
+};
 
 submitButton.addEventListener("click", getMessage);
-// will be called when web page opened page and look at console in inspector tools
+buttonElement.addEventListener("click", clearInput);
