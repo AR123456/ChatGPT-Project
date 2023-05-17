@@ -54,10 +54,10 @@ async function getMessage() {
     console.log(error);
   }
 }
-clearInput = () => {
+submitButton.addEventListener("click", getMessage);
+function clearInput() {
   // replace what is in div with empty string
   inputElement.value = "";
-};
+}
 
-submitButton.addEventListener("click", getMessage);
 buttonElement.addEventListener("click", clearInput);
