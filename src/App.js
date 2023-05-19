@@ -10,7 +10,18 @@ const App = () => {
           <p>Made by Anne</p>
         </nav>
       </section>
-      <section className="main"></section>
+      <section className="main">
+        <h1>Annes GPT</h1>
+        <ul className="feed">
+          <li>TBD</li>
+        </ul>
+        <div className="bottom-section">
+          <div className="input-contanier">
+            <input type="text" />
+            <div className="submit">➢</div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
