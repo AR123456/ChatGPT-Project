@@ -11,14 +11,20 @@ const App = () => {
         </nav>
       </section>
       <section className="main">
-        <h1>Annes GPT</h1>
+        <h1>What to you want to know ?</h1>
         <ul className="feed">
           <li>TBD</li>
         </ul>
         <div className="bottom-section">
-          <div className="input-contanier">
+          <div className="input-container">
             <input type="text" />
-            <div className="submit">➢</div>
+            <div id="submit">➢</div>
+            <p className="info">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+              dolore excepturi, recusandae nostrum, inventore dolores placeat
+              odit veritatis similique omnis laudantium dignissimos nemo
+              exercitationem? Doloribus amet repudiandae sed unde minus!
+            </p>
           </div>
         </div>
       </section>

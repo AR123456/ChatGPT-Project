@@ -13,6 +13,7 @@ body {
 }
 .app {
   background-color: #343541;
+  display: flex;
 }
 h1 {
   font-size: 33px;
@@ -52,7 +53,7 @@ nav {
 .info {
   color: rgba(255, 255, 255, 0.5);
   font-size: 11px;
-  padding: 10px;
+  padding: 10px 10px;
 }
 input {
   border: none;
