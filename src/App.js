@@ -19,13 +19,13 @@ const App = () => {
           <div className="input-container">
             <input type="text" />
             <div id="submit">➢</div>
-            <p className="info">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
-              dolore excepturi, recusandae nostrum, inventore dolores placeat
-              odit veritatis similique omnis laudantium dignissimos nemo
-              exercitationem? Doloribus amet repudiandae sed unde minus!
-            </p>
           </div>
+          <p className="info">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+            dolore excepturi, recusandae nostrum, inventore dolores placeat odit
+            veritatis similique omnis laudantium dignissimos nemo
+            exercitationem? Doloribus amet repudiandae sed unde minus!
+          </p>
         </div>
       </section>
     </div>

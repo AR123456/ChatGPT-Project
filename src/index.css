@@ -109,3 +109,8 @@ nav {
   padding: 15px 0;
   cursor: pointer;
 }
+#submit {
+  position: absolute;
+  bottom: 15px;
+  right: 0px;
+}
