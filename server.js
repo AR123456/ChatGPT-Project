@@ -9,10 +9,30 @@ app.use(cors());
 
 // api key here
 const API_KEY = process.env.API_KEY;
+
 app.post("/completions", (req, res) => {
+  const options = {
+    method: "POST",
+    headers: {
+      " Authorization": `Bearer ${API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "user",
+          //   content: inputElement.value,
+          content: "how are you",
+        },
+      ],
+      // max number of words or characters that can be generated in response
+      max_tokens: 100,
+    }),
+  };
   try {
     // node fetch API
-    fetch("");
+    fetch("https://api.openai.com/v1/chat/completions", options);
   } catch (error) {
     console.error(error);
   }
