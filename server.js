@@ -1,4 +1,3 @@
-const fetch = require("node-fetch");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -12,14 +11,13 @@ app.use(express.json());
 app.use(cors());
 
 // api key here
-
 const API_KEY = process.env.API_KEY;
 
 app.post("/completions", async (req, res) => {
   const options = {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${API_KEY}`,
+      " Authorization": `Bearer ${API_KEY}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
