@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 
 const App = () => {
+  // value input
+  const [value, setValue] = useState(null);
+  // message response
   const [message, setMessage] = useState(null);
 
   // define getMessage
@@ -26,6 +29,7 @@ const App = () => {
       console.error(error);
     }
   };
+  console.log(value);
 
   return (
     <div className="app">
@@ -45,7 +49,7 @@ const App = () => {
         </ul>
         <div className="bottom-section">
           <div className="input-container">
-            <input type="text" />
+            <input value={value} onChange={(e) => setValue(e.target.value)} />
             <div id="submit" onClick={getMessages}>
               ➢
             </div>
