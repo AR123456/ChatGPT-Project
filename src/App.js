@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
 const App = () => {
-  // value input
   const [value, setValue] = useState(null);
-  // message response
+
   const [message, setMessage] = useState(null);
 
   // define getMessage
   const getMessages = async () => {
     const options = {
       method: "POST",
-      body: JSON.stringify({ message: "hard coded how are you" }),
+      // send value to back end from on click
+      body: JSON.stringify({ message: value }),
       headers: { "Content-Type": "application/json" },
     };
     try {
@@ -29,7 +29,6 @@ const App = () => {
       console.error(error);
     }
   };
-  console.log(value);
 
   return (
     <div className="app">
