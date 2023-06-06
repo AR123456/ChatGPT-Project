@@ -4,6 +4,8 @@ const App = () => {
   const [value, setValue] = useState(null);
 
   const [message, setMessage] = useState(null);
+  const [previousChats, setPreviousChats] = useState([]);
+  const [title, setTitle] = useState([]);
 
   // define getMessage
   const getMessages = async () => {
@@ -24,11 +26,12 @@ const App = () => {
       // put this into state using use state
       // console.log(data);
       setMessage(data.choices[0].message);
-      console.log(message);
     } catch (error) {
       console.error(error);
     }
   };
+  // title with the prompt
+  useEffect(() => {}, [message]);
 
   return (
     <div className="app">
