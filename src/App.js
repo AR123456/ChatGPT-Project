@@ -5,7 +5,7 @@ const App = () => {
 
   const [message, setMessage] = useState(null);
   const [previousChats, setPreviousChats] = useState([]);
-  const [currentTitle, setCurrentTitle] = useState(null);
+  const [title, setTitle] = useState([]);
 
   // define getMessage
   const getMessages = async () => {
@@ -31,28 +31,7 @@ const App = () => {
     }
   };
   // title with the prompt
-  useEffect(() => {
-    // console.log(currentTitle, value, message);
-    if (!currentTitle && value && message) {
-      setCurrentTitle(value);
-    }
-    if (currentTitle && value && message) {
-      setPreviousChats((preChats) => [
-        ...preChats,
-        {
-          title: currentTitle,
-          role: "user",
-          content: value,
-        },
-        {
-          title: currentTitle,
-          role: message.role,
-          content: message.content,
-        },
-      ]);
-    }
-  }, [message, currentTitle]);
-  // console.log(previousChats);
+  useEffect(() => {}, [message]);
 
   return (
     <div className="app">
@@ -66,7 +45,7 @@ const App = () => {
         </nav>
       </section>
       <section className="main">
-        {!currentTitle && <h1>What to you want to know ?</h1>}
+        <h1>What to you want to know ?</h1>
         <ul className="feed">
           <li>TBD</li>
         </ul>
