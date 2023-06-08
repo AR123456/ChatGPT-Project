@@ -32,7 +32,7 @@ const App = () => {
   };
   // title with the prompt
   useEffect(() => {
-    console.log(currentTitle, value, message);
+    // console.log(currentTitle, value, message);
     if (!currentTitle && value && message) {
       setCurrentTitle(value);
     }
@@ -52,7 +52,7 @@ const App = () => {
       ]);
     }
   }, [message, currentTitle]);
-  console.log(previousChats);
+  // console.log(previousChats);
 
   return (
     <div className="app">
