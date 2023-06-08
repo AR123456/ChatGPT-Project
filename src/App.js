@@ -57,17 +57,26 @@ const App = () => {
       ]);
     }
   }, [message, currentTitle]);
-  console.log(previousChats);
+  // console.log(previousChats);
   // are we on the current chat ?
   const currentChat = previousChats.filter(
     (previousChat) => previousChat.title === currentTitle
   );
+  // get chat title
+  previousChats.map((previousChat) => previousChat.title);
+  // get unique items from the object
+  const uniqueTitles = Array.from(
+    new Set(previousChats.map((previousChat) => previousChat.title))
+  );
+  console.log(uniqueTitles);
   return (
     <div className="app">
       <section className="side-bar">
         <button onClick={createNewChat}>+ New Chat</button>
         <ul className="history">
-          <li>List Start</li>
+          {uniqueTitles?.map((uniqueTitle, index) => (
+            <li>{uniqueTitle}</li>
+          ))}
         </ul>
         <nav>
           <p>Made by Anne</p>
@@ -76,7 +85,7 @@ const App = () => {
       <section className="main">
         {!currentTitle && <h1>What to you want to know ?</h1>}
         <ul className="feed">
-          {currentChat.map((chatMessage, index) => (
+          {currentChat?.map((chatMessage, index) => (
             <li key={index}>
               <p className="role">{chatMessage.role}</p>
               <p>{chatMessage.message}</p>
