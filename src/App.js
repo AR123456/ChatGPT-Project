@@ -11,7 +11,11 @@ const App = () => {
     setValue("");
     setCurrentTitle(null);
   };
-
+  const handleClick = (uniqueTitle) => {
+    setCurrentTitle(uniqueTitle);
+    setMessage(null);
+    setValue("");
+  };
   // define getMessage
   const getMessages = async () => {
     const options = {
@@ -75,7 +79,9 @@ const App = () => {
         <button onClick={createNewChat}>+ New Chat</button>
         <ul className="history">
           {uniqueTitles?.map((uniqueTitle, index) => (
-            <li>{uniqueTitle}</li>
+            <li key={index} onClick={() => handleClick(uniqueTitle)}>
+              {uniqueTitle}
+            </li>
           ))}
         </ul>
         <nav>
