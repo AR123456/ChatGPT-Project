@@ -6,6 +6,11 @@ const App = () => {
   const [message, setMessage] = useState(null);
   const [previousChats, setPreviousChats] = useState([]);
   const [currentTitle, setCurrentTitle] = useState(null);
+  const createNewChat = () => {
+    setMessage(null);
+    setValue("");
+    setCurrentTitle(null);
+  };
 
   // define getMessage
   const getMessages = async () => {
@@ -37,8 +42,8 @@ const App = () => {
       setCurrentTitle(value);
     }
     if (currentTitle && value && message) {
-      setPreviousChats((preChats) => [
-        ...preChats,
+      setPreviousChats((prevChats) => [
+        ...prevChats,
         {
           title: currentTitle,
           role: "user",
@@ -52,12 +57,12 @@ const App = () => {
       ]);
     }
   }, [message, currentTitle]);
-  // console.log(previousChats);
+  console.log(previousChats);
 
   return (
     <div className="app">
       <section className="side-bar">
-        <button>+ New Chat</button>
+        <button onClick={createNewChat}>+ New Chat</button>
         <ul className="history">
           <li>List Start</li>
         </ul>
