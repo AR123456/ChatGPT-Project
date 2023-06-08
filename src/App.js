@@ -58,7 +58,10 @@ const App = () => {
     }
   }, [message, currentTitle]);
   console.log(previousChats);
-
+  // are we on the current chat ?
+  const currentChat = previousChats.filter(
+    (previousChat) => previousChat.title === currentTitle
+  );
   return (
     <div className="app">
       <section className="side-bar">
@@ -73,7 +76,12 @@ const App = () => {
       <section className="main">
         {!currentTitle && <h1>What to you want to know ?</h1>}
         <ul className="feed">
-          <li>TBD</li>
+          {currentChat.map((chatMessage, index) => (
+            <li key={index}>
+              <p className="role">{chatMessage.role}</p>
+              <p>{chatMessage.message}</p>
+            </li>
+          ))}
         </ul>
         <div className="bottom-section">
           <div className="input-container">
