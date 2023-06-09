@@ -72,7 +72,7 @@ const App = () => {
   const uniqueTitles = Array.from(
     new Set(previousChats.map((previousChat) => previousChat.title))
   );
-  console.log(uniqueTitles);
+  // console.log(uniqueTitles);
   return (
     <div className="app">
       <section className="side-bar">

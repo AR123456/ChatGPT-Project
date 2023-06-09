@@ -115,16 +115,16 @@ nav {
   right: 0px;
 }
 .feed {
-  overflow: scroll;
+  overflow: hidden scroll;
   width: 100%;
   padding: 0;
 }
 .feed li {
   display: flex;
   background-color: #444654;
-  width: 100%;
+  width: 90%;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px;
 }
 .feed p {
   color: rgba(255, 255, 255, 0.8);
