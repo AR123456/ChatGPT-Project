@@ -1,5 +1,15 @@
 // const API_KEY = process.env.API_KEY;
-const API_KEY = "";
+const API_KEY = " ";
+const submitIcon = document.querySelector("#submit-icon");
+
+const getImages = () => {
+  try {
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+submitIcon.addEventListener("click", getImages);
 
 async function fetchImages() {
   const response = await fetch("https://api.openai.com/v1/images/generations", {
