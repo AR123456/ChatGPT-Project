@@ -12,7 +12,7 @@
 }
 header{
   color: rgb(255,255,255);
-  height:150px ;
+  height:150px;
   display: flex;
   align-items: center;
   }
@@ -30,8 +30,18 @@ z-index: -10;
   }
   .input-container{
   width: 100%;
-  max-width: 650px;
+  max-width: 600px;
   position: relative;
+  }
+  input{
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  }
+  #submit-icon{
+  position: absolute;
+  top: 10px;
+  right: 30px;
   }
 /* h1 {
   font-size: 33px;
