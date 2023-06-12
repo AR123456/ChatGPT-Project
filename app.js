@@ -22,8 +22,12 @@ const getImages = async () => {
       options
     );
     const data = await response.json();
-    console.log(data);
-    console.log(data.data[0]);
+    // console.log(data);
+    // console.log(data.data[0]);
+    data?.data.forEach((imageObject) => {
+      const ImageContainer = document.createElement("div");
+      ImageContainer.classList.add("image-container");
+    });
   } catch (error) {
     console.log(error);
   }
