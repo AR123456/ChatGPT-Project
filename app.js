@@ -2,7 +2,7 @@
 const API_KEY = "";
 const submitIcon = document.querySelector("#submit-icon");
 const inputElement = document.querySelector("input");
-
+const imageSection = document.querySelector(".images-section");
 const getImages = async () => {
   const options = {
     method: "POST",
@@ -27,6 +27,10 @@ const getImages = async () => {
     data?.data.forEach((imageObject) => {
       const ImageContainer = document.createElement("div");
       ImageContainer.classList.add("image-container");
+      const imageElement = document.createElement("img");
+      imageElement.setAttribute("src", imageObject.url);
+      ImageContainer.append(imageElement);
+      imageSection.append(ImageContainer);
     });
   } catch (error) {
     console.log(error);
