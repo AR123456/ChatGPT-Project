@@ -1,6 +1,7 @@
 // const API_KEY = process.env.API_KEY;
 const API_KEY = "";
 const submitIcon = document.querySelector("#submit-icon");
+const inputElement = document.querySelector("input");
 
 const getImages = async () => {
   const options = {
@@ -10,8 +11,8 @@ const getImages = async () => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      prompt: "A hamburger singing in the rain",
-      n: 2,
+      prompt: inputElement.value,
+      n: 4,
       size: "1024x1024",
     }),
   };
