@@ -25,12 +25,12 @@ const getImages = async () => {
     // console.log(data);
     // console.log(data.data[0]);
     data?.data.forEach((imageObject) => {
-      const ImageContainer = document.createElement("div");
-      ImageContainer.classList.add("image-container");
+      const imageContainer = document.createElement("div");
+      imageContainer.classList.add("image-container");
       const imageElement = document.createElement("img");
       imageElement.setAttribute("src", imageObject.url);
-      ImageContainer.append(imageElement);
-      imageSection.append(ImageContainer);
+      imageContainer.append(imageElement);
+      imageSection.append(imageContainer);
     });
   } catch (error) {
     console.log(error);
