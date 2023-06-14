@@ -45,7 +45,7 @@ input {
   box-shadow: rgba(38, 57, 77) 0 20px 30px -10px;
   box-sizing: border-box;
 }
-#submit-icon {
+#submit {
   position: absolute;
   top: 10px;
   right: 30px;
