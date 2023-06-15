@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 const App = () => {
   const [value, setValue] = useState(null);
+  const [image, setImage] = useState(null);
 
-  const [message, setMessage] = useState(null);
-  const [previousChats, setPreviousChats] = useState([]);
-  const [currentTitle, setCurrentTitle] = useState(null);
+  const createNewImage = () => {
+    setImage();
+  };
+  // on click
+
   //define get images- send to back end on click
   const getImages = async () => {
     const options = {
