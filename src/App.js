@@ -4,7 +4,8 @@ const App = () => {
   const [image, setImage] = useState(null);
 
   const createNewImage = () => {
-    setImage();
+    setImage(null);
+    setValue("");
   };
   // on click
 
@@ -13,20 +14,20 @@ const App = () => {
     const options = {
       method: "POST",
       // send value to back end from on click
-      body: JSON.stringify({ message: value }),
+      body: JSON.stringify({ image: value }),
       headers: { "Content-Type": "application/json" },
     };
     try {
       // from our backend
       const response = await fetch(
-        "http://localhost:8000/completions",
+        "http://localhost:8000/generations",
 
         options
       );
       const data = await response.json();
       // put this into state using use state
-      // console.log(data);
-      setImage(data.choices[0].message);
+      console.log(data);
+      setImage(data.data[0]);
     } catch (error) {
       console.error(error);
     }
