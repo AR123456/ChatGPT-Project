@@ -40,7 +40,7 @@ const API_KEY = process.env.API_KEY;
 //     console.error(error);
 //   }
 // });
-const getImages = async () => {
+app.post("/generations", async (req, res) => {
   const options = {
     method: "POST",
     headers: {
@@ -72,6 +72,6 @@ const getImages = async () => {
   } catch (error) {
     console.log(error);
   }
-};
+});
 
 app.listen(PORT, () => console.log("Server is running on port", PORT));
