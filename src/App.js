@@ -9,7 +9,7 @@ const App = () => {
     <div className="app">
       <section className="search-section">
         <p>
-          Description <span className="suprise">Suprise me</span>
+          Description <span className="surprise">Surprise me</span>
         </p>
         <div className="input-container">
           <input placeholder="An impressionist oil painting of a sunflower in a purple vase" />
