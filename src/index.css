@@ -45,3 +45,9 @@ body {
   width: 90%;
   font-weight: 200;
 }
+.input-container input::placeholder {
+  color: #cacaca;
+}
+.input-container button {
+  width: 10%;
+}
