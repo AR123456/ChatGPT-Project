@@ -29,3 +29,10 @@ body {
   padding: 4px 12px;
   margin: 0 0 2px 5px;
 }
+.input-container {
+  width: 100%;
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 82, 0.15) 0 2px 4px;
+}
