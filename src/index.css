@@ -12,6 +12,10 @@ body {
   display: flex;
   justify-content: center;
 }
+p {
+  font-weight: 200;
+  font-size: 14px;
+}
 .app {
   width: 90vw;
 }
@@ -56,4 +60,7 @@ body {
   color: #777;
   font-weight: bold;
   cursor: pointer;
+}
+.input-container button:active {
+  background-color: #cacaca;
 }
