@@ -50,4 +50,10 @@ body {
 }
 .input-container button {
   width: 10%;
+  border: none;
+  border-left: 1px #cacaca solid;
+  background-color: #fff;
+  color: #777;
+  font-weight: bold;
+  cursor: pointer;
 }
