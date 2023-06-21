@@ -13,7 +13,7 @@ const App = () => {
         </p>
         <div className="input-container">
           <input placeholder="An impressionist oil painting of a sunflower in a purple vase" />
-          <button>Generate</button>
+          <button onClick={getImages}>Generate</button>
         </div>
       </section>
       <section className="image-section"></section>
