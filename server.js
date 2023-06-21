@@ -17,9 +17,13 @@ const openai = new OpenAIApi(configuration);
 app.listen(PORT, () => console.log(`Your server is running on port: ${PORT}`));
 
 app.post("/images", async (req, res) => {
-  const response = await openai.createImage({
-    prompt: "A cute baby sea otter",
-    n: 2,
-    size: "1024x1024",
-  });
+  try {
+    const response = await openai.createImage({
+      prompt: "A cute baby sea otter",
+      n: 2,
+      size: "1024x1024",
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
