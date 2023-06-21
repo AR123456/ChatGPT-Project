@@ -13,8 +13,8 @@ const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
   apiKey: process.env.API_KEY,
 });
+
 const openai = new OpenAIApi(configuration);
-app.listen(PORT, () => console.log(`Your server is running on port: ${PORT}`));
 
 app.post("/images", async (req, res) => {
   try {
@@ -27,3 +27,5 @@ app.post("/images", async (req, res) => {
     console.log(error);
   }
 });
+
+app.listen(PORT, () => console.log(`Your server is running on port: ${PORT}`));
