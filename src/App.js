@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   // get the data back and put it into state
-  const [Images, setImages] = useState(null);
+  const [images, setImages] = useState(null);
+  const [value, setValue] = useState(null);
   const supriseOptions = [
     "A blue owl eating pie",
     "A seal talking on a telephone",
@@ -22,6 +23,7 @@ const App = () => {
       const response = await fetch("http://localhost:8000/images", options);
       const data = await response.json();
       console.log(data);
+      setImages(data);
     } catch (error) {
       console.error(error);
     }
@@ -39,6 +41,13 @@ const App = () => {
       </section>
       <section className="image-section">
         {/* map what comes back and put it into this div */}
+        {images?.map((image, _index) => (
+          <img
+            key={_index}
+            src={image.url}
+            alt={`Generated image of ${value}`}
+          />
+        ))}
       </section>
     </div>
   );
