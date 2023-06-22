@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
 const App = () => {
+  // get the data back and put it into state
+  const [Images, setImages] = useState(null);
   const supriseOptions = [
     "A blue owl eating pie",
     "A seal talking on a telephone",
@@ -35,7 +37,9 @@ const App = () => {
           <button onClick={getImages}>Generate</button>
         </div>
       </section>
-      <section className="image-section"></section>
+      <section className="image-section">
+        {/* map what comes back and put it into this div */}
+      </section>
     </div>
   );
 };
