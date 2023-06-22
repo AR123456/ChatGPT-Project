@@ -28,6 +28,7 @@ const App = () => {
       console.error(error);
     }
   };
+  console.log(value);
   return (
     <div className="app">
       <section className="search-section">
@@ -35,7 +36,13 @@ const App = () => {
           Description <span className="surprise">Surprise me</span>
         </p>
         <div className="input-container">
-          <input placeholder="An impressionist oil painting of a sunflower in a purple vase" />
+          <input
+            value={value}
+            placeholder="An impressionist oil painting of a sunflower in a purple vase"
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+          />
           <button onClick={getImages}>Generate</button>
         </div>
       </section>
