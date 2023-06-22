@@ -6,30 +6,7 @@ const App = () => {
     "A seal talking on a telephone",
     "A pineapple swiming in a pond",
   ];
-  const [value, setValue] = useState(null);
 
-  const [message, setMessage] = useState(null);
-
-  // psudocode
-  const getImages = async () => {
-    // send value from back end to front end on click
-    const options = {
-      // post matches post on front end
-      method: "POST",
-      body: JSON.stringify({ message: value }),
-      headers: { "Content-Type": "application/json" },
-    };
-    try {
-      // fetch from backend
-      const response = await fetch("http://localhost:8000/images", options);
-      const data = await response.json();
-      // put this into state using use state
-      console.log(data);
-      setMessage(data.data.url);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   return (
     <div className="app">
       <section className="search-section">
