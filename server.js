@@ -24,7 +24,7 @@ app.post("/images", async (req, res) => {
       n: 2,
       size: "1024x1024",
     });
-    console.log(response);
+    console.log(response.data.data);
     res.send(response.data.data);
   } catch (error) {
     console.log(error);
