@@ -77,3 +77,8 @@ p {
   max-width: 33%;
   flex-grow: 1;
 }
+@media (max-width: 556px) {
+  .image-section img {
+    max-width: 100%;
+  }
+}
