@@ -9,6 +9,14 @@ const App = () => {
     "A seal talking on a telephone",
     "A pineapple swiming in a pond",
   ];
+
+  const supriseMe = () => {
+    const randomValue =
+      supriseOptions[Math.floor(Math.random() * supriseOptions.length)];
+    // set this as the value in the generate input so when generate is clicked use that
+    setValue(randomValue);
+  };
+
   const getImages = async () => {
     try {
       const options = {
@@ -29,9 +37,7 @@ const App = () => {
       console.error(error);
     }
   };
-  const supriseMe = async () => {
-    // put a random supriseOption and set it as the message:value in options then run getImages function
-  };
+
   console.log(value);
   return (
     <div className="app">
