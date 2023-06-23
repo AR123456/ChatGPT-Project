@@ -24,6 +24,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 300px;
 }
 .surprise {
   background-color: #ececf1;

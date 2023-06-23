@@ -14,7 +14,8 @@ const App = () => {
       const options = {
         method: "POST",
         body: JSON.stringify({
-          message: "CAT",
+          // pass the value to the server
+          message: value,
         }),
         headers: {
           "Content-type": "application/json",
