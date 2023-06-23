@@ -4,6 +4,9 @@ const App = () => {
   // get the data back and put it into state
   const [images, setImages] = useState(null);
   const [value, setValue] = useState(null);
+
+  const [error, setError] = useState(null);
+
   const supriseOptions = [
     "A blue owl eating pie",
     "A seal talking on a telephone",
@@ -11,6 +14,7 @@ const App = () => {
   ];
 
   const supriseMe = () => {
+    setImages(null);
     const randomValue =
       supriseOptions[Math.floor(Math.random() * supriseOptions.length)];
     // set this as the value in the generate input so when generate is clicked use that
@@ -18,6 +22,11 @@ const App = () => {
   };
 
   const getImages = async () => {
+    setImages(null);
+    if (value === null) {
+      setError("Error ! Must have a search term");
+      return;
+    }
     try {
       const options = {
         method: "POST",
@@ -58,6 +67,7 @@ const App = () => {
           />
           <button onClick={getImages}>Generate</button>
         </div>
+        {error && <p>{error}</p>}
       </section>
       <section className="image-section">
         {/* map what comes back and put it into this div */}
