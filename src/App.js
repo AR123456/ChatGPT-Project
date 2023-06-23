@@ -29,12 +29,18 @@ const App = () => {
       console.error(error);
     }
   };
+  const supriseMe = async () => {
+    // put a random supriseOption and set it as the message:value in options then run getImages function
+  };
   console.log(value);
   return (
     <div className="app">
       <section className="search-section">
         <p>
-          Description <span className="surprise">Surprise me</span>
+          Description{" "}
+          <span className="surprise" onClick={supriseMe}>
+            Surprise me
+          </span>
         </p>
         <div className="input-container">
           <input
