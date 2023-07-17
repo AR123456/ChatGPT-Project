@@ -6,6 +6,7 @@ const App = () => {
   const [value, setValue] = useState(null);
 
   const [error, setError] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const supriseOptions = [
     "A blue owl eating pie",
@@ -46,10 +47,16 @@ const App = () => {
       console.error(error);
     }
   };
-  const uploadImage = (e) => {
+  const uploadImage = async (e) => {
     console.log(e.target.files[0]);
     const formData = new FormData();
     formData.append("file", e.target.files[0]);
+    //  pass through selected image - send to back end
+    setSelectedImage(e.target.files[0]);
+    try {
+    } catch (error) {
+      await fetch();
+    }
   };
 
   return (
