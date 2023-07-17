@@ -70,7 +70,7 @@ const App = () => {
         <p className="extra-info">
           Or,{" "}
           <span>
-            <label htmlFor="files">upload an image</label>
+            <label htmlFor="files">upload an image</label> to edit.
             <input type="file" accept="image/*" id="file" />
           </span>
         </p>
