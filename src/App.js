@@ -46,8 +46,12 @@ const App = () => {
       console.error(error);
     }
   };
+  const uploadImage = (e) => {
+    console.log(e.target.files[0]);
+    const formData = new FormData();
+    formData.append("file", e.target.files[0]);
+  };
 
-  console.log(value);
   return (
     <div className="app">
       <section className="search-section">
@@ -70,9 +74,15 @@ const App = () => {
         <p className="extra-info">
           Or,{" "}
           <span>
-            <label htmlFor="files">upload an image</label> to edit.
-            <input type="file" accept="image/*" id="file" />
+            <label htmlFor="files">upload an image</label>
+            <input
+              onChange={uploadImage}
+              type="file"
+              accept="image/*"
+              id="file"
+            />
           </span>
+          to edit.
         </p>
         {error && <p>{error}</p>}
       </section>
