@@ -25,6 +25,10 @@ const storage = multer.diskStorage({
     cb(null, "public");
   },
   // how should the file name look ?
+  filename: (req, file, cb) => {
+    console.log("file", file);
+    cb(null, Date.now() + "-" + file.originalname);
+  },
 });
 
 const upload = multer({ storage: storage }).single("file");
