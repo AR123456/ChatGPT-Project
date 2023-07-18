@@ -9,7 +9,7 @@ const App = () => {
   const [error, setError] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   // pass this along to the modal
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
   const supriseOptions = [
     "A blue owl eating pie",
     "A seal talking on a telephone",
@@ -101,9 +101,11 @@ const App = () => {
           to edit.
         </p>
         {error && <p>{error}</p>}
-        <div className="overlay">
-          <Modal></Modal>
-        </div>
+        {modalOpen && (
+          <div className="overlay">
+            <Modal setModalOpen={setModalOpen}></Modal>
+          </div>
+        )}
       </section>
       <section className="image-section">
         {/* map what comes back and put it into this div */}

@@ -1,10 +1,14 @@
 import { useState } from "react";
 
-const Modal = () => {
+const Modal = ({ setModalOpen }) => {
   const [error, setError] = useState(null);
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <div className="modal">
-      <div>modal</div>
+      <div onClick={closeModal}>X</div>
     </div>
   );
 };
