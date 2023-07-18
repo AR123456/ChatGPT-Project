@@ -48,6 +48,15 @@ app.post("/images", async (req, res) => {
   }
 });
 
-app.post("/upload", (req, res) => {});
+app.post("/upload", (req, res) => {
+  upload(req, res, (err) => {
+    if (err instanceof multer.MulterError) {
+      return res.status(500).json(err);
+    } else if (err) {
+      return res.status(500).json(err);
+    }
+    console.log(req.file);
+  });
+});
 
 app.listen(PORT, () => console.log(`Your server is running on port: ${PORT}`));
