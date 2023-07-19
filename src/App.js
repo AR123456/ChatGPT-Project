@@ -107,6 +107,7 @@ const App = () => {
             <Modal
               setModalOpen={setModalOpen}
               setSelectedImage={setSelectedImage}
+              selectedImage={selectedImage}
             ></Modal>
           </div>
         )}
