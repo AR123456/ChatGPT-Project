@@ -101,6 +101,7 @@ const App = () => {
           to edit.
         </p>
         {error && <p>{error}</p>}
+        {/* the modal and overlay */}
         {modalOpen && (
           <div className="overlay">
             <Modal
