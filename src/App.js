@@ -103,7 +103,10 @@ const App = () => {
         {error && <p>{error}</p>}
         {modalOpen && (
           <div className="overlay">
-            <Modal setModalOpen={setModalOpen}></Modal>
+            <Modal
+              setModalOpen={setModalOpen}
+              setSelectedImage={setSelectedImage}
+            ></Modal>
           </div>
         )}
       </section>
