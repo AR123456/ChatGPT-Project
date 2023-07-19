@@ -10,6 +10,9 @@ const Modal = ({ setModalOpen, setSelectedImage }) => {
   return (
     <div className="modal">
       <div onClick={closeModal}>X</div>
+      <div className="img-container">
+        {selectedImage && <img src={selectedImage} />}
+      </div>
     </div>
   );
 };
