@@ -108,3 +108,12 @@ p {
   display: flex;
   flex-direction: column;
 }
+.modal button {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background-color: #fff;
+}
+.model button:active {
+  background-color: #fafafc;
+}

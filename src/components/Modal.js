@@ -10,7 +10,7 @@ const Modal = ({ setModalOpen, setSelectedImage, selectedImage }) => {
 
   return (
     <div className="modal">
-      <div onClick={closeModal}>X</div>
+      <div onClick={closeModal}>✘</div>
       <div className="img-container">
         {selectedImage && (
           // eslint-disable-next-line jsx-a11y/img-redundant-alt
