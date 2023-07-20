@@ -9,7 +9,7 @@ const App = () => {
   const [error, setError] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   // pass this along to the modal
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const supriseOptions = [
     "A blue owl eating pie",
     "A seal talking on a telephone",
@@ -53,6 +53,8 @@ const App = () => {
     console.log(e.target.files[0]);
     const formData = new FormData();
     formData.append("file", e.target.files[0]);
+    // open modal
+    setModalOpen(true);
     //  pass through selected image - send to back end
     setSelectedImage(e.target.files[0]);
     try {
