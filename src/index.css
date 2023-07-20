@@ -99,3 +99,12 @@ p {
   align-items: center;
   z-index: 10;
 }
+.modal {
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
