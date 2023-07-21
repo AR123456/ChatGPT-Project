@@ -113,6 +113,7 @@ p {
   padding: 20px;
   border: none;
   background-color: #fff;
+  cursor: pointer;
 }
 .model button:active {
   background-color: #fafafc;

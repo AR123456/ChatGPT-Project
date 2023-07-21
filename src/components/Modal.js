@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Modal = ({ setModalOpen, setSelectedImage, selectedImage }) => {
   const [error, setError] = useState(null);
-  console.log("selectedImage", selectedImage);
+
   const closeModal = () => {
     setModalOpen(false);
     setSelectedImage(null);
   };
-
+  const checkSize = () => {
+    console.log("selectedImage", selectedImage);
+  };
   return (
     <div className="modal">
       <div onClick={closeModal}>✘</div>
@@ -17,6 +19,7 @@ const Modal = ({ setModalOpen, setSelectedImage, selectedImage }) => {
           <img src={URL.createObjectURL(selectedImage)} alt="uploaded image" />
         )}
       </div>
+      <button onClick={checkSize}>Click to check size </button>
       <button>Generate</button>
     </div>
   );
