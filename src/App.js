@@ -77,6 +77,9 @@ const App = () => {
       const response = await fetch("http://localhost:8000/variations", options);
       const data = await response.json();
       console.log(data);
+      setImages(data);
+      setError(null);
+      setModalOpen(false);
     } catch (error) {
       console.error(error);
     }
@@ -121,6 +124,7 @@ const App = () => {
               setModalOpen={setModalOpen}
               setSelectedImage={setSelectedImage}
               selectedImage={selectedImage}
+              generateVariations={generateVariations}
             ></Modal>
           </div>
         )}
