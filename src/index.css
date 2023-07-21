@@ -118,3 +118,8 @@ p {
 .model button:active {
   background-color: #fafafc;
 }
+.img-container {
+  height: 256px;
+  width: 256px;
+  overflow: hidden;
+}

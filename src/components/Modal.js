@@ -29,9 +29,10 @@ const Modal = ({ setModalOpen, setSelectedImage, selectedImage }) => {
           />
         )}
       </div>
-      <p>{error || "*Image must be 256 x 256"}</p>
-      {!error && <button onClick={checkSize}>Generate </button>}
+      <p>{error || "*Image must be 256 x 256*"}</p>
+
       {error && <button onClick={closeModal}> Close and try again</button>}
+      {!error && <button onClick={checkSize}>Generate </button>}
     </div>
   );
 };
