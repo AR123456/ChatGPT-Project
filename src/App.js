@@ -69,7 +69,18 @@ const App = () => {
       console.error(error);
     }
   };
-
+  const generateVariations = async () => {
+    try {
+      const options = {
+        method: "POST",
+      };
+      const response = await fetch("http://localhost:8000/variations", options);
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="app">
       <section className="search-section">
