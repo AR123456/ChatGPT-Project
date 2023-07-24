@@ -57,6 +57,8 @@ const App = () => {
     setModalOpen(true);
     //  pass through selected image - send to back end
     setSelectedImage(e.target.files[0]);
+    // clear selected image
+    e.target.value = null;
     try {
       const options = {
         method: "POST",
@@ -70,6 +72,12 @@ const App = () => {
     }
   };
   const generateVariations = async () => {
+    setImages(null);
+    if (selectedImage === null) {
+      setError("Error , need an existing image");
+      setModalOpen(false);
+      return;
+    }
     try {
       const options = {
         method: "POST",
