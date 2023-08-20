@@ -17,6 +17,6 @@ async function main() {
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: "What is the capital of Colorado" }],
   });
-  console.log(chatCompletion);
+  console.log(chatCompletion.data.choices[0].message.content);
 }
 main();
