@@ -1,22 +1,17 @@
-// imports from open api
-
-import { Configuration, OpenAIApi } from "openai";
-import dotenv from "dotenv";
-dotenv.config();
-
-const configuration = new Configuration({
-  // oject literal
-  apiKey: process.env.OPENAI_API_KEY,
-});
-// pass the config object into new instance of OpenAIApi
-const openai = new OpenAIApi(configuration);
+// import from my config folder file
+import openai from "./config/open-ai.js";
+import readlineSync from "readline-sync";
+import colors from "colors";
 
 // create completion is asyncornis so need async await syntax
 async function main() {
-  const chatCompletion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: "What is the capital of Colorado" }],
-  });
-  console.log(chatCompletion.data.choices[0].message.content);
+  // const chatCompletion = await openai.createChatCompletion({
+  //   model: "gpt-3.5-turbo",
+  //   messages: [{ role: "user", content: "What is the capital of Florida" }],
+  // });
+  // console.log(chatCompletion.data.choices[0].message.content);
+  // readline sync stuff
+  const userName = readlineSync.question("May I have your name?");
+  console.log(`Hello ${userName}`);
 }
 main();
