@@ -16,5 +16,15 @@ async function main() {
   // colors
   console.log(colors.bold.green("Welcome to the Chatbot Program"));
   console.log(colors.bold.green("You can start chatting with the bot "));
+  // want to keep the coversation going
+  while (true) {
+    // get input from user
+    const userInput = readlineSync.question(colors.yellow("You: "));
+    try {
+      // call api with user input
+    } catch (error) {
+      console.error(colors.red(error));
+    }
+  }
 }
 main();
