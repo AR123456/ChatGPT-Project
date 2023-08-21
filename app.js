@@ -11,7 +11,10 @@ async function main() {
   // });
   // console.log(chatCompletion.data.choices[0].message.content);
   // readline sync stuff
-  const userName = readlineSync.question("May I have your name?");
-  console.log(`Hello ${userName}`);
+  // const userName = readlineSync.question("May I have your name?");
+  // console.log(`Hello ${userName}`);
+  // colors
+  console.log(colors.bold.green("Welcome to the Chatbot Program"));
+  console.log(colors.bold.green("You can start chatting with the bot "));
 }
 main();
