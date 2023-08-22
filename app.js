@@ -13,6 +13,10 @@ async function main() {
     const userInput = readlineSync.question(colors.yellow("You: "));
     try {
       // call api with user input
+      // add way to escape the while loop
+      if (userInput.toLocaleLowerCase() === "exit") {
+        return;
+      }
     } catch (error) {
       console.error(colors.red(error));
     }
