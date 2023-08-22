@@ -13,10 +13,18 @@ async function main() {
     const userInput = readlineSync.question(colors.yellow("You: "));
     try {
       // call api with user input
+      const chatCompletion = await openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: userInput }],
+      });
+      const completionText = chatCompletion.data.choices[0].message.content;
       // add way to escape the while loop
       if (userInput.toLocaleLowerCase() === "exit") {
+        // get good by from chat gpt
+        console.log(colors.green("Bot: ") + completionText);
         return;
       }
+      console.log(colors.green("Bot: ") + completionText);
     } catch (error) {
       console.error(colors.red(error));
     }
